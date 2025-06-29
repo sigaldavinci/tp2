@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Objetos 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+<body>
+
+  <header class="banner">
+    <img src="img/logo.png" alt="Logo del sitio" width=300 class="logo">
+    <h1>Pulso Digital</h1>
+    <h2>Explorando la relación entre forma, color y movimiento</h2>
+  </header>
+
+
+  <section id="servicios-detalle" class="scroll-anim">
+    <h2>Servicios que ofrecemos</h2>
+    <div class="servicios-grid">
+  
+      <div class="servicio">
+        <img src="img/iconos5.png" alt="Diseño de Logotipos">
+        <h3>Diseño de Logotipos</h3>
+        <p>Creamos logotipos que representan la identidad única de tu marca.</p>
+      </div>
+  
+      <div class="servicio">
+        <img src="img/iconos2.png" alt="Diseño de Folletos">
+        <h3>Diseño de Folletos</h3>
+        <p>Diseñamos folletos atractivos y efectivos para comunicar tu mensaje.</p>
+      </div>
+  
+      <div class="servicio">
+        <img src="img/iconos3.png" alt="Diseño Web">
+        <h3>Diseño de Sitios Web</h3>
+        <p>Desarrollamos sitios modernos, adaptativos y funcionales.</p>
+      </div>  
+    </div>
+  </section>
+  
+
+  <section id="canvas" class="scroll-anim">
+    <h2>Arte Generativo en acción</h2>
+    <p>Interactuá con el lienzo moviendo el mouse. Se generan formas geométricas según tu movimiento.</p>
+    <div id="arte-generativo"></div>
+    <button onclick="clearCanvas()">Reiniciar arte</button>
+  </section>
+
+  <section id="canvas-section-2" class="scroll-anim">
+    <h2>Partículas que Siguen tu Movimiento</h2>
+    <p>Explorá cómo las partículas responden a tu cursor generando arte generativo en tiempo real.</p>
+    <div id="arte-generativo-2"></div>
+  </section>
+  
+
+  <section id="descripcion" class="scroll-anim">
+    <h2>¿Qué es Pulso Digital?</h2>
+    <p>“Pulso Digital” es una experiencia interactiva basada en arte generativo. A través de formas simples, el usuario interactúa y genera una composición visual única.</p>
+    <img src="img/ejemplo1.jpg" alt="Ejemplo 1">
+    <img src="img/ejemplo2.jpg" alt="Ejemplo 2">
+  </section>
+
+  <section id="arte-generativo-3" class="scroll-anim">
+    <h2> Objetos 3D </h2>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, totam cum quibusdam minima nesciunt nostrum numquam! Ad, maiores porro saepe atque accusantium voluptatibus unde recusandae necessitatibus quos, quod, doloremque dolore.</p>
+  </section>
+
+  <section id="arte-generativo-4" class="scroll-anim">
+    <h2>Escena 3D: Sistema de órbitas</h2>
+    <p>Explorá cómo los objetos orbitan y cambiá la dirección con un clic.</p>
+    <div id="arte-generativo-4"></div>
+  </section>
+
+
+  <section id="integrantes" class="scroll-anim">
+    <h2>Integrantes del grupo</h2>
+    <div class="persona">
+      <img src="img/sigal.jpg" alt="integrante">
+      <h3>Sigal Sade</h3>
+      <p>Email: sigal.sade@davinci.edu.ar</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Carrera: Diseño Multimedial</p>
+    <p>Materia: Diseño y Programación Web I </p>
+    <p>Turno: Tarde</p>
+    <p>Comisión: DMBP</p>
+    <p>Docente: Jonathan Emanuel Cruz</p>
+    <p>Mes y Año: Julio 2025</p>
+  </footer>
+
+  <script src="sketch.js"></script>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.scroll-anim').forEach(section => {
+        observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
